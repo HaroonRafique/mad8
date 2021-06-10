@@ -26,8 +26,9 @@
 #
 
   SYS=linux
-  FCOMP=gfortran-4.4
-  FCOPTS=-Wno-globals -m64 -O3
+  FCOMP=gfortran
+#~   FCOPTS=-Wno-globals -m64 -O3
+  FCOPTS=-m64 -O3 -ff2c
 #  CERN=/cern/2002/lib
   CERN=/cern/new/lib
   Xlib=/usr/lib/x86_64-linux-gnu/
