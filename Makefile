@@ -26,15 +26,20 @@
 #
 
   SYS=linux
-  FCOMP=gfortran
+  #FCOMP=gfortran
+  FCOMP=/opt/intel/oneapi/compiler/2021.2.0/linux/bin/intel64/ifort
 #~   FCOPTS=-Wno-globals -m64 -O3
-  FCOPTS=-m64 -O3 -ff2c
+  FCOPTS=-O3
 #  CERN=/cern/2002/lib
   CERN=/cern/new/lib
-  Xlib=/usr/lib/x86_64-linux-gnu/
+#~   Xlib=/usr/lib/x86_64-linux-gnu/
+  Xlib=/usr/lib64
+  INTELSTUFF=/opt/intel/oneapi/compiler/2021.2.0/linux/compiler/lib/intel64_lin
+#~   LIBS=$(CERN)/libmathlib.a $(CERN)/libpacklib.a $(CERN)/libkernlib.a \
+#~        $(Xlib)/libX11.a $(Xlib)/libxcb.a $(Xlib)/libXau.a $(Xlib)/libXdmcp.a  -lnsl -lm -lc
   LIBS=$(CERN)/libmathlib.a $(CERN)/libpacklib.a $(CERN)/libkernlib.a \
-       $(Xlib)/libX11.a $(Xlib)/libxcb.a $(Xlib)/libXau.a $(Xlib)/libXdmcp.a  -lnsl -lm -lc
-  ASTLIB=
+       $(Xlib)/libX11.so $(Xlib)/libxcb.so $(Xlib)/libXau.so $(Xlib)/libXdmcp.so  -lnsl -lm -lc
+  ASTLIB=$(INTELSTUFF)/libimf.so
   GCC_FLAGS=-g -m64 -ansi -Wall -D_SWAP_ -D_LINUX_ -D__LINUX__ 
   MPACK=files/madpackage_SLAC.tgz
   AST=./astuce
