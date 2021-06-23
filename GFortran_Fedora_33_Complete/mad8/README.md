@@ -41,7 +41,7 @@
 # Build Instructions:
  
 - Install all required dependencies/libraries etc as above
-- Make sure you have GCC-GFortran installed (```which gfortran``` should return ```/usr/bin/gfortran``` or similar. If not ``sudo dnf install gcc-gfortran```).
+- Make sure you have GCC-GFortran installed (```which gfortran``` should return ```/usr/bin/gfortran``` or similar. If not ```sudo dnf install gcc-gfortran```).
 - You may have to manually edit the Makefile to direct to specific libraries if the compiler cannot find them (see line 61 for example: ``` LIBS=$(CERN)/libmathlib.so.2_gfortran.2006 $(CERN)/libpacklib.so.1_gfortran.2006 $(CERN)/libkernlib.so.1_gfortran.2006 $(Xlib)/libX11.so.6 $(Xlib)/libxcb.so.1 $(Xlib)/libXau.so.6 $(Xlib)/libXdmcp.so.6 /usr/lib/libnsl.so.1 -lm``` where I have manually pointed to the locations of the required libraries (slightly different library versions etc may work)
 - ```make clean``` clean any existing build
 - ```make astuce``` this should compile the astuce binary (executable) using the included astuce.f
