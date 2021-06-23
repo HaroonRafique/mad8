@@ -40,9 +40,12 @@
 
 # Build Instructions:
  
+- Install all required dependencies/libraries etc as above
+- You may have to manually edit the Makefile to direct to specific libraries if the compiler cannot find them (see line 61 for example: ``` LIBS=$(CERN)/libmathlib.so.2_gfortran.2006 $(CERN)/libpacklib.so.1_gfortran.2006 $(CERN)/libkernlib.so.1_gfortran.2006 $(Xlib)/libX11.so.6 $(Xlib)/libxcb.so.1 $(Xlib)/libXau.so.6 $(Xlib)/libXdmcp.so.6 /usr/lib/libnsl.so.1 -lm 
+``` where I have manually pointed to the locations of the required libraries (slightly different library versions etc may work)
 - ```make clean``` clean any existing build
-- ```make astuce``` this should compile the astuce executable using the included astuce.f
-- ```make mad.standard``` this should compile the mad.standard executable and move it to mad8s (filename change)
+- ```make astuce``` this should compile the astuce binary (executable) using the included astuce.f
+- ```make mad.standard``` this should compile the mad.standard binary using astuce and move it to mad8s (filename change)
 
 # Run instructions:
 
@@ -57,8 +60,8 @@
 > - e.g. ```ln -s /home/HR/Repositories/mad8/GFortran_Fedora_33_Complete/mad8/mad8.dict dict```
 > - ```mad8s < input_filename``` to run your input file
 
-
 # Known Issues:
+
 After an apparently successful compilation, the following error is given when there is a compiler issue:
 ```bash
 [HR@localhost MAD8_Test]$ /home/HR/Repositories/mad8/GFort_Attempts/First/mad8/mad8s < ISIS_II_EHRCS.mad 
