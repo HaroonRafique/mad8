@@ -6,4 +6,5 @@ Originally forked from the Manchester Accelerator MAD8 repository, this reposito
 - [x] Original MAD 8 source code from http://mad.web.cern.ch/mad/ ```Source/mad8```
 - [x] Working iFortran compiled Linux (Fedora 33) MAD 8 with all dependencies, provided by Frank Schmidt of CERN (untested) ```iFort_Fedora_33_Complete/mad8```
 - [x] Working GFortran compiled Linux (Fedora 33) MAD 8 with all dependencies and instructions ```GFortran_Fedora_33_Complete/mad8```
+- [x] Conversion script from MAD8 to MAD-X (not fully robust, still in progress) ```Convert_MAD8_to_MADX.ipynb```
 - [ ] Example simulations
